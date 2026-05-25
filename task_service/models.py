@@ -12,10 +12,13 @@ class Task(BaseModel):
     title: str
     description : str
     completed : bool = False
+    # created_at -> current date time when the task is created
     created_at: datetime = Field(
         default_factory=lambda: datetime.now(timezone.utc),
         json_schema_extra={"readOnly": True}
     )
+    #assigned_to -> Optional or can be assigned to a valid user id
+    assigned_to : int | None = None
 
     @field_validator("title", "description")
     @classmethod

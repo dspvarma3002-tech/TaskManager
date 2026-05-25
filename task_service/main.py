@@ -1,6 +1,5 @@
-from fastapi import FastAPI,APIRouter
-from models import Task
-from routes import tasks_router
+from fastapi import FastAPI
+from task_service.routes import tasks_router
 
 app = FastAPI()
 
